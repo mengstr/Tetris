@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tetris", "Tetris\Tetris.vcxproj", "{75F5335E-39F9-4FA8-B04C-2A57AF6CF30D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Evo|Win32 = Evo|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75F5335E-39F9-4FA8-B04C-2A57AF6CF30D}.Evo|Win32.ActiveCfg = Evo|Win32
+		{75F5335E-39F9-4FA8-B04C-2A57AF6CF30D}.Evo|Win32.Build.0 = Evo|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

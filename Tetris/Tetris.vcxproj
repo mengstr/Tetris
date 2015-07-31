@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Evo|Win32">
+      <Configuration>Evo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{75F5335E-39F9-4FA8-B04C-2A57AF6CF30D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Tetris</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Evo|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <OutDir>.\Output\Evo\out\</OutDir>
+    <IntDir>.\Output\Evo\obj\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='VerixV|Win32'">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Evo|Win32'">
+    <NMakeBuildCommandLine>make all Target=$(Configuration) -f Tetris.mak</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>make clean all Target=$(Configuration) -f Tetris.mak</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>make clean Target=$(Configuration) -f Tetris.mak</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>Includes;C:\VerixVAps\ACT2000\2.20.0.1\Include;C:\VerixVAps\VRXSDK\3.5.0\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakePreprocessorDefinitions>BATTERY</NMakePreprocessorDefinitions>
+    <IncludePath>Includes;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;</IncludePath>
+    <SourcePath>Source;$(VCInstallDir)atlmfc\src\mfc;$(VCInstallDir)atlmfc\src\mfcm;$(VCInstallDir)atlmfc\src\atl;$(VCInstallDir)crt\src;</SourcePath>
+    <NMakeOutput>.\Output\Evo\out\Evo.out</NMakeOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VerixV|Win32'">
+    <IncludePath>Includes;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VerixV|Win32'">
+    <SourcePath>Source;$(VCInstallDir)atlmfc\src\mfc;$(VCInstallDir)atlmfc\src\mfcm;$(VCInstallDir)atlmfc\src\atl;$(VCInstallDir)crt\src;</SourcePath>
+    <NMakeIncludeSearchPath>Includes;C:\VerixVAps\ACT2000\2.20.0.1\Include;C:\VerixVAps\VRXSDK\3.5.0\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeBuildCommandLine>nmake Target=Vx810 /nologo /s -k -f Tetris.mak</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>nmake Target=Vx810 /nologo /s -k -f Tetris.mak</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>nmake Target=Vx670 /nologo /s clean -k -f Tetris.mak</NMakeCleanCommandLine>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Evo|Win32'">
+    <BuildLog>
+      <Path>.\Output\Evo\VerixV.log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='VerixV|Win32'">
+    <BuildLog>
+      <Path>Output\Vx810\VerixV.log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Board.cpp" />
+    <ClCompile Include="Source\Console.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Tetris.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Includes\Board.h" />
+    <ClInclude Include="Includes\Console.h" />
+    <ClInclude Include="Includes\CountedPointer.h" />
+    <ClInclude Include="Includes\Shapes.h" />
+    <ClInclude Include="Includes\Tetris.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.bmp" />
+    <None Include="Resources\BATTERY.VFT" />
+    <None Include="Resources\Tetris.bmp" />
+    <None Include="Tetris.mak" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
